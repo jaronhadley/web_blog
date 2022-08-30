@@ -19,4 +19,7 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  same_user: (sess_user, list_user) => {
+    return sess_user == list_user;
+  }
 };

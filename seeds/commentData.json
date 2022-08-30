@@ -1,12 +1,21 @@
 [
     {
-      "contents": "Awesome."
+      "contents": "Awesome.",
+      "user_id": 1,
+      "user_name": "Sal",
+      "post_id": 1
     },
     {
-      "contents": "Truly Inspiring"
+      "contents": "Truly Inspiring",
+      "user_id": 1,
+      "user_name": "Sal",
+      "post_id":2
     },
     {
-      "contents": "10/10 would again"
+      "contents": "10/10 would again",
+      "user_id": 3,
+      "user_name": "Amiko",
+      "post_id": 2
     }
   ]
   
