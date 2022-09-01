@@ -26,3 +26,7 @@ header, .project:not(:last-child) {
 .form-hide {
   display: none;
 }
+
+.created-by {
+  vertical-align: baseline;
+}

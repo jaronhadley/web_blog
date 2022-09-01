@@ -59,6 +59,6 @@ document
 
 if(document.querySelector('#delete-btn')){
     document
-        .querySelector('#delete-btn')
+        .querySelector('.comment-list')
         .addEventListener('click', deleteComment);
 }
