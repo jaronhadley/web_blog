@@ -43,7 +43,6 @@ router.get('/post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
         },
         {
           model: Comment,
@@ -90,6 +89,31 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/post/update/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          model: Comment,
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+    res.render('update', {
+      ...post,
+      logged_in: req.session.logged_in,
+      logged_id: req.session.user_id
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

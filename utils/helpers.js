@@ -20,6 +20,7 @@ module.exports = {
     }
   },
   same_user: (sess_user, list_user) => {
+    console.log(sess_user, list_user)
     return sess_user == list_user;
   }
 };

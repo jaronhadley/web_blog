@@ -30,3 +30,8 @@ header, .project:not(:last-child) {
 .created-by {
   vertical-align: baseline;
 }
+
+textarea {
+  width: 100%;
+  height: 350px;
+}
