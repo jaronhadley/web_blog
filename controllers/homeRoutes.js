@@ -36,7 +36,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// render specific post
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -60,11 +60,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-// Use withAuth middleware to prevent access to route
+// render personal user dashboard
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Post }, { model: Comment }],
@@ -80,17 +78,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+// login
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-    res.redirect('/dashboard');
+    res.redirect('/dashboard'); // route to personal dash if logged in
     return;
   }
 
   res.render('login');
 });
-
+// render page that allows the post to be updated.
 router.get('/post/update/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {

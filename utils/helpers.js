@@ -19,8 +19,8 @@ module.exports = {
       return `<span for="img" aria-label="gear">⚙️</span>`;
     }
   },
+  // allows handlebars to if the session user matches the post or comment user
   same_user: (sess_user, list_user) => {
-    console.log(sess_user, list_user)
     return sess_user == list_user;
   }
 };

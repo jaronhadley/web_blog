@@ -1,3 +1,4 @@
+// update post
 const updatePost = async (event) => {
     event.preventDefault();
 

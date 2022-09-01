@@ -1,3 +1,4 @@
+// unhide comment form to allow for a comment
 const addComment = (event) => {
     event.preventDefault();
     const commentForm = document.getElementById('comment-form');
@@ -5,6 +6,7 @@ const addComment = (event) => {
     commentForm.classList.remove("form-hide")
     commentBtn.classList.add("form-hide")
 };
+// create comment
 const leaveComment = async (event) => {
     event.preventDefault();
     const contents = document.querySelector('#comment-content').value.trim();
@@ -33,7 +35,7 @@ const leaveComment = async (event) => {
     }
 
 }
-
+// delete comment
 const deleteComment = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
